@@ -1,11 +1,23 @@
-import { vitePlugin as remix } from "@remix-run/dev";
-import { installGlobals } from "@remix-run/node";
-import { defineConfig } from "vite";
-import { vercelPreset } from "@vercel/remix/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { fileURLToPath, URL } from 'node:url'
 
-installGlobals();
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import tailwind from 'tailwindcss'
+import autoprefixer from 'autoprefixer'
 
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: [remix({ presets: [vercelPreset()] }), tsconfigPaths()],
-});
+    css: {
+        postcss: {
+            plugins: [tailwind(), autoprefixer()]
+        }
+    },
+    plugins: [
+        vue(),
+    ],
+    resolve: {
+        alias: {
+            '@': fileURLToPath(new URL('./src', import.meta.url))
+        }
+    }
+})

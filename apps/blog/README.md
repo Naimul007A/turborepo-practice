@@ -1,38 +1,39 @@
-# Remix
+# blog
 
-This directory is a brief example of a [Remix](https://remix.run/docs) site that can be deployed to Vercel with zero configuration.
+This template should help get you started developing with Vue 3 in Vite.
 
-To get started, run the Remix cli with this template
+## Recommended IDE Setup
 
-```sh
-npx create-remix@latest --template vercel/vercel/examples/remix
-```
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Deploy Your Own
+## Type Support for `.vue` Imports in TS
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/remix&template=remix)
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-_Live Example: https://remix-run-template.vercel.app_
+## Customize configuration
 
-You can also deploy using the [Vercel CLI](https://vercel.com/docs/cli):
+See [Vite Configuration Reference](https://vite.dev/config/).
 
-```sh
-npm i -g vercel
-vercel
-```
-
-## Development
-
-To run your Remix app locally, make sure your project's local dependencies are installed:
+## Project Setup
 
 ```sh
-npm install
+pnpm install
 ```
 
-Afterwards, start the Remix development server like so:
+### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
-Open up [http://localhost:5173](http://localhost:5173) and you should be ready to go!
+### Type-Check, Compile and Minify for Production
+
+```sh
+pnpm build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+pnpm lint
+```

@@ -1,39 +1,45 @@
 {
   "name": "blog",
+  "version": "0.0.0",
   "private": true,
-  "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
-    "dev": "remix vite:dev",
-    "typecheck": "tsc"
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
   },
   "dependencies": {
-    "@remix-run/node": "^2.9.2",
-    "@remix-run/react": "^2.9.2",
-    "@remix-run/server-runtime": "^2.9.2",
-    "@repo/ui": "workspace:*",
-    "@vercel/analytics": "^1.2.2",
-    "@vercel/remix": "2.9.2-patch.2",
-    "isbot": "^4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@radix-icons/vue": "^1.0.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "pinia": "^2.2.4",
+    "radix-vue": "^1.9.7",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5",
+    "prisma-types": "workspace:*"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.9.2",
-    "@remix-run/eslint-config": "^2.9.2",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
-    "@vercel/remix": "2.9.2-patch.2",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.38.0",
-    "typescript": "^5.1.6",
-    "vite": "^5.1.0",
-    "vite-tsconfig-paths": "^4.2.1"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.16.11",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vue/eslint-config-prettier": "^10.0.0",
+    "@vue/eslint-config-typescript": "^14.0.1",
+    "@vue/tsconfig": "^0.5.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.12.0",
+    "eslint-plugin-vue": "^9.29.0",
+    "npm-run-all2": "^6.2.3",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.14",
+    "typescript": "~5.5.4",
+    "vite": "^5.4.8",
+    "vue-tsc": "^2.1.6"
   }
 }
